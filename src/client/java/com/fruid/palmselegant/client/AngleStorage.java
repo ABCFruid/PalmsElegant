@@ -87,14 +87,7 @@ public class AngleStorage {
             Path file = getSetFile(setName);
 
             if (!Files.exists(file)) {
-                List<AngleData> startingAngles;
-
-                if (setName.equals("Default")) {
-                    startingAngles = AngleManager.createDefaultAngles();
-                } else {
-                    startingAngles = new java.util.ArrayList<>();
-                }
-
+                List<AngleData> startingAngles = new java.util.ArrayList<>();
                 saveSet(setName, startingAngles);
                 return startingAngles;
             }
@@ -107,14 +100,14 @@ public class AngleStorage {
             reader.close();
 
             if (loaded == null) {
-                return AngleManager.createDefaultAngles();
+                return new java.util.ArrayList<>();
             }
 
             return loaded;
 
         } catch (Exception e) {
             e.printStackTrace();
-            return AngleManager.createDefaultAngles();
+            return new java.util.ArrayList<>();
         }
     }
 
