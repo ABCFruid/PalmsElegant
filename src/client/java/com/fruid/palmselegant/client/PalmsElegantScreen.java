@@ -62,14 +62,14 @@ public class PalmsElegantScreen extends Screen {
                         this.minecraft.player.setXRot(angle.pitch);
                     }
 
-                    this.minecraft.setScreen(null);
+                    this.minecraft.gui.setScreen(null);
                 }
         );
         this.addRenderableWidget(this.angleList);
 
         this.addRenderableWidget(
                 Button.builder(Component.literal("Options"), b -> {
-                            this.minecraft.setScreen(new OptionsScreen(this));
+                            this.minecraft.gui.setScreen(new OptionsScreen(this));
                         })
                         .bounds(optionsX, topButtonY, sideButtonWidth, 20)
                         .build()
@@ -80,12 +80,12 @@ public class PalmsElegantScreen extends Screen {
                 topButtonY,
                 dropdownWidth,
                 20,
-                () -> this.minecraft.setScreen(new PalmsElegantScreen())
+                () -> this.minecraft.gui.setScreen(new PalmsElegantScreen())
         );
 
         this.addRenderableWidget(
                 Button.builder(Component.literal("Clear Set"), b -> {
-                            this.minecraft.setScreen(
+                            this.minecraft.gui.setScreen(
                                     new ConfirmActionScreen(
                                             new PalmsElegantScreen(),
                                             Component.literal("Are you sure you would like to clear the current set: ")
@@ -102,7 +102,7 @@ public class PalmsElegantScreen extends Screen {
 
         this.addRenderableWidget(
                 Button.builder(Component.literal("Add/Edit/Delete"), b -> {
-                            this.minecraft.setScreen(
+                            this.minecraft.gui.setScreen(
                                     new AngleEditScreen(this, null)
                             );
                         })

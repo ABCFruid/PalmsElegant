@@ -54,7 +54,7 @@ public class NewAngleSetScreen extends Screen {
 
                     if (AngleManager.canCreateSet(setName)) {
                         AngleManager.createNewSet(setName);
-                        this.minecraft.setScreen(this.parent);
+                        this.minecraft.gui.setScreen(this.parent);
                     }
                 })
                 .bounds(centerX - 150, this.height - 55, 140, 20)
@@ -64,7 +64,7 @@ public class NewAngleSetScreen extends Screen {
 
         this.addRenderableWidget(
                 Button.builder(Component.literal("Cancel"), b -> {
-                            this.minecraft.setScreen(this.parent);
+                            this.minecraft.gui.setScreen(this.parent);
                         })
                         .bounds(centerX + 10, this.height - 55, 140, 20)
                         .build()

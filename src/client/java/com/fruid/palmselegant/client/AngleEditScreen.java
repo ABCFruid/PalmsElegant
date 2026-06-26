@@ -54,7 +54,7 @@ public class AngleEditScreen extends Screen {
                 listHeight,
                 listTop,
                 36,
-                angle -> this.minecraft.setScreen(
+                angle -> this.minecraft.gui.setScreen(
                         new AngleDetailsScreen(this, angle)
                 )
         );
@@ -63,7 +63,7 @@ public class AngleEditScreen extends Screen {
 
         this.addRenderableWidget(
                 Button.builder(Component.literal("Options"), b -> {
-                            this.minecraft.setScreen(new OptionsScreen(this));
+                            this.minecraft.gui.setScreen(new OptionsScreen(this));
                         })
                         .bounds(optionsX, topButtonY, sideButtonWidth, 20)
                         .build()
@@ -74,12 +74,12 @@ public class AngleEditScreen extends Screen {
                 topButtonY,
                 dropdownWidth,
                 20,
-                () -> this.minecraft.setScreen(new AngleEditScreen(this.parent, null))
+                () -> this.minecraft.gui.setScreen(new AngleEditScreen(this.parent, null))
         );
 
         this.addRenderableWidget(
                 Button.builder(Component.literal("Clear Set"), b -> {
-                            this.minecraft.setScreen(
+                            this.minecraft.gui.setScreen(
                                     new ConfirmActionScreen(
                                             new AngleEditScreen(this.parent, null),
                                             Component.literal("Are you sure you would like to clear the current set: ")
@@ -96,7 +96,7 @@ public class AngleEditScreen extends Screen {
 
         this.addRenderableWidget(
                 Button.builder(Component.literal("Add Angle"), b -> {
-                            this.minecraft.setScreen(new AngleDetailsScreen(this, null));
+                            this.minecraft.gui.setScreen(new AngleDetailsScreen(this, null));
                         })
                         .bounds(centerX - 150, this.height - 55, 300, 20)
                         .build()
@@ -104,7 +104,7 @@ public class AngleEditScreen extends Screen {
 
         this.addRenderableWidget(
                 Button.builder(Component.literal("Return to Menu"), b -> {
-                            this.minecraft.setScreen(this.parent);
+                            this.minecraft.gui.setScreen(this.parent);
                         })
                         .bounds(centerX - 150, this.height - 25, 140, 20)
                         .build()
@@ -112,7 +112,7 @@ public class AngleEditScreen extends Screen {
 
         this.addRenderableWidget(
                 Button.builder(Component.literal("Done"), b -> {
-                            this.minecraft.setScreen(this.parent);
+                            this.minecraft.gui.setScreen(this.parent);
                         })
                         .bounds(centerX + 10, this.height - 25, 140, 20)
                         .build()

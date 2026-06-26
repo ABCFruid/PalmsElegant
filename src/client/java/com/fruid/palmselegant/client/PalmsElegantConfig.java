@@ -29,8 +29,6 @@ public class PalmsElegantConfig {
         return FabricLoader.getInstance()
                 .getConfigDir()
                 .resolve("palmselegant")
-                .resolve("worlds")
-                .resolve(PalmsElegantContext.getCurrentContextId())
                 .resolve("options.json");
     }
 

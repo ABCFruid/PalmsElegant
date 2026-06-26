@@ -213,8 +213,8 @@ public class AngleSetDropdownWidget extends AbstractWidget {
         if (isInside(mouseX, mouseY, x, rowY, width, ROW_HEIGHT)) {
             this.open = false;
 
-            Minecraft.getInstance().setScreen(
-                    new NewAngleSetScreen(Minecraft.getInstance().screen)
+            Minecraft.getInstance().gui.setScreen(
+                    new NewAngleSetScreen(Minecraft.getInstance().gui.screen())
             );
 
             return true;

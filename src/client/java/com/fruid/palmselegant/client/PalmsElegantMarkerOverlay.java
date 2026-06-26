@@ -22,9 +22,9 @@ public class PalmsElegantMarkerOverlay {
 
         if (!PalmsElegantConfig.showPreciseAngle) return;
         if (minecraft.player == null) return;
-        if (minecraft.options.hideGui) return;
+        if (minecraft.gui.hud.isHidden()) return;
 
-        Camera camera = minecraft.gameRenderer.getMainCamera();
+        Camera camera = minecraft.gameRenderer.mainCamera();
 
         PalmsElegantSnapManager.updateClosest(minecraft);
 

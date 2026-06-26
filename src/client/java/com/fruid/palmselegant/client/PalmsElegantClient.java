@@ -64,7 +64,7 @@ public class PalmsElegantClient implements ClientModInitializer {
 
 		ClientTickEvents.END_CLIENT_TICK.register(client -> {
 			while (menuKey.consumeClick()) {
-				Minecraft.getInstance().setScreen(new PalmsElegantScreen());
+				Minecraft.getInstance().gui.setScreen(new PalmsElegantScreen());
 			}
 		});
 

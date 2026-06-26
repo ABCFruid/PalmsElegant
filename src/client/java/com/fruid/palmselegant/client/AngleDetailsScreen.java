@@ -43,7 +43,7 @@ public class AngleDetailsScreen extends Screen {
         if (this.editing) {
             this.addRenderableWidget(
                     Button.builder(Component.literal("Delete").withColor(0xFF5555), b -> {
-                                this.minecraft.setScreen(
+                                this.minecraft.gui.setScreen(
                                         new ConfirmActionScreen(
                                                 this.parent,
                                                 Component.literal("Are you sure you would like to delete the current angle: ")
@@ -117,7 +117,7 @@ public class AngleDetailsScreen extends Screen {
 
                             AngleManager.saveCurrentSet();
 
-                            this.minecraft.setScreen(this.parent);
+                            this.minecraft.gui.setScreen(this.parent);
                         })
                         .bounds(centerX - 150, this.height - 25, 140, 20)
                         .build()
@@ -125,7 +125,7 @@ public class AngleDetailsScreen extends Screen {
 
         this.addRenderableWidget(
                 Button.builder(Component.literal("Cancel"), b -> {
-                            this.minecraft.setScreen(this.parent);
+                            this.minecraft.gui.setScreen(this.parent);
                         })
                         .bounds(centerX + 10, this.height - 25, 140, 20)
                         .build()

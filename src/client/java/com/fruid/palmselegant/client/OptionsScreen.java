@@ -119,7 +119,7 @@ public class OptionsScreen extends Screen {
         this.addRenderableWidget(
                 Button.builder(Component.literal("Done"), b -> {
                             PalmsElegantConfig.save();
-                            this.minecraft.setScreen(this.parent);
+                            this.minecraft.gui.setScreen(this.parent);
                         })
                         .bounds(centerX - 100, this.height - 27, 200, 20)
                         .build()

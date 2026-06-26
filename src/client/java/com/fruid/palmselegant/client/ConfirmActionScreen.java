@@ -38,7 +38,7 @@ public class ConfirmActionScreen extends Screen {
         this.addRenderableWidget(
                 Button.builder(Component.literal("Yes"), b -> {
                             this.confirmAction.run();
-                            this.minecraft.setScreen(this.parent);
+                            this.minecraft.gui.setScreen(this.parent);
                         })
                         .bounds(centerX - 155, textY + 80, 150, 20)
                         .build()
@@ -46,7 +46,7 @@ public class ConfirmActionScreen extends Screen {
 
         this.addRenderableWidget(
                 Button.builder(Component.literal("No"), b -> {
-                            this.minecraft.setScreen(this.parent);
+                            this.minecraft.gui.setScreen(this.parent);
                         })
                         .bounds(centerX + 5, textY + 80, 150, 20)
                         .build()

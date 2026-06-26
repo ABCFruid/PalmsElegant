@@ -12,7 +12,7 @@ import org.spongepowered.asm.mixin.injection.callback.CallbackInfoReturnable;
 public abstract class LevelRendererMixin {
 
     @Inject(
-            method = "collectPerFrameGizmos",
+            method = "collectPerFrameRenderThreadGizmos",
             at = @At("RETURN")
     )
     private void palmselegant$addAngleGizmos(
