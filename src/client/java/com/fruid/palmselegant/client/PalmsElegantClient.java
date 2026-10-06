@@ -26,7 +26,7 @@ public class PalmsElegantClient implements ClientModInitializer {
 		menuKey = KeyMappingHelper.registerKeyMapping(
 				new KeyMapping(
 						"key.palmselegant.menu",
-						InputConstants.Type.KEYSYM,
+						InputConstants.Type.KEYBOARD,
 						InputConstants.UNKNOWN.getValue(),
 						KeyMapping.Category.register(
 								Identifier.fromNamespaceAndPath("palmselegant", "menu")
